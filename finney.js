@@ -20,7 +20,8 @@ feeds.forEach(function(feed) {
             });
             
             var xml = $.xml();
-            fs.writeFile('output/' + feed.slug + '.xml', xml);
+            var path = __dirname;
+            fs.writeFile(path . '/output/' + feed.slug + '.xml', xml);
         }
     
     });
