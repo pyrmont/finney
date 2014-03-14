@@ -1,6 +1,18 @@
 # Finney README
 
-Finney is a simple Node.js script that outputs modified versions of the NHK radio podcasts (in English and Japanese). In the case of the English podcast, it only outputs the 9 pm episode and in the case of the Japanese podcast it only outputs the 7 am episode.
+Finney is a simple Node.js script that modifies an arbitrary array of podcast feeds based on regular expressions and saves each modified pocast as a separate file.
+
+The array of podcast feeds is read from a file called ```feeds.json```. An example file is included in ```feeds.json.example```. Each object in the array must be defined in the following manner:
+
+```javascript
+{
+    "uri": "{podcast_uri}";
+    "slug": "{output_slug}";
+    "match": "{regular_expression}";
+}
+```
+
+Finney will iterate over each item in the podcast feed. It removes any items that match the regular expression provided.
 
 ## Requirements
 
@@ -14,7 +26,12 @@ cd finney
 npm install
 ```
 
-Once you have installed Finney, you will need to create an ```output``` directory.
+Once you have installed Finney, you will need to do the following:
+
+1. create an ```output``` directory; and
+2. create a ```feeds.json``` file containing an array of podcast feeds to be modified.
+
+Each modified feed is saved as ```{slug}.xml``` using the slug specified in the feeds.json file for that particular feed.
 
 ## Licence
 

@@ -1,0 +1,12 @@
+[
+    {
+        "uri": "http://www.nhk.or.jp/r-news/podcast/nhkradionews.xml", 
+        "slug": "nhkradionews_j", 
+        "match": "^((?!朝).)*$"
+    },
+    {
+        "uri": "http://www.nhk.or.jp/rj/podcast/rss/english.xml",
+        "slug": "nhkradionews_e",
+        "match": "^((?!21:).)*$"
+    }
+]
