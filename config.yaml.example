@@ -1,0 +1,6 @@
+title: "My Podcast"
+description: "The description of my podcast."
+summary: "A summary of my podcast"
+image: "http://www.example.com/artwork.jpg"
+feed: "my_podcast.rss"
+url_base: "http://www.example.com"
