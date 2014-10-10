@@ -67,6 +67,7 @@ Once you have installed Finney, you can run the respective scripts as follows.
 ### Ruby
 
 * create a directory containing the audio files
+* create a `config.yaml` file containing details of the podcast inside the directory
 * run `bundle exec ruby finney.rb /path/to/directory/with/audio/files/config.yaml`
 
 It is recommended that the directory with the audio files is placed in the `output` directory. You should then make this directory publicly accessible via your web server.
