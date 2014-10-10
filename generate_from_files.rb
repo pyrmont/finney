@@ -15,6 +15,8 @@ files_dir = File.expand_path(File.dirname(config_file))
 # Config values
 podcast_title = config['title']
 podcast_description = config['description']
+podcast_summary = config['summary']
+podcast_image = config['image']
 podcast_file = 'output/' + config['feed']
 public_url_base = config['url_base']
 
@@ -24,7 +26,7 @@ podcast_pub_date = DateTime.now.strftime(date_format)
 
 # Build the items
 items_content = ""
-Dir.entries(files_dir).each do |file|
+Dir.entries(files_dir).sort.reverse.each do |file|
     next if file =~ /^\./  # ignore invisible files
     next unless file =~ /\.(mp3|m4a)$/  # only use audio files
 
@@ -64,6 +66,9 @@ content = <<-HTML
         <title>#{podcast_title}</title>
         <description>#{podcast_description}</description>
         <pubDate>#{podcast_pub_date}</pubDate>
+        <itunes:subtitle>#{podcast_description}</itunes:subtitle>
+        <itunes:image href="#{podcast_image}" />
+        <itunes:summary>#{podcast_summary}</itunes:summary>
 #{items_content}
     </channel>
 </rss>
